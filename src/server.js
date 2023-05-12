@@ -2,7 +2,7 @@ const express = require("express");
 const {PrismaClient} = require("@prisma/client");
 const bcrypt = require("bcrypt");
 // const cookieparser = require("cookie-parser")
-const { error } = require("console");
+// const { error } = require("console");
 
 const app = express();
 app.use(express.json());
@@ -32,19 +32,14 @@ app.post("/register" , async(req, res) =>{
             })
         })
 
+        // await prisma.user.create({
+        //     data:{
+        //         nome,
+        //         senha,
+        //     }
 
-
-
-
-
-        await prisma.user.create({
-            data:{
-                nome,
-                senha,
-            }
-
-        });
-        res.json("Usuario criado");
+        // });
+        // res.json("Usuario criado");
     }catch(err){
         res.json(error);
     }
